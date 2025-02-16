@@ -6,6 +6,8 @@ TagManager:
   tags:
   - IA
   - Disco
+  - goalPlayer
+  - goalIA
   layers:
   - Default
   - TransparentFX
