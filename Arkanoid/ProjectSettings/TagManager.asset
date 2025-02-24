@@ -12,6 +12,7 @@ TagManager:
   - Brick
   - Wall
   - Heart
+  - PowerUP
   layers:
   - Default
   - TransparentFX
