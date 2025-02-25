@@ -3904,6 +3904,8 @@ MonoBehaviour:
   speed: 20
   gameStarted: 0
   countBricks: 16
+  points: 0
+  layout: {fileID: 0}
 --- !u!50 &2017592002
 Rigidbody2D:
   serializedVersion: 4

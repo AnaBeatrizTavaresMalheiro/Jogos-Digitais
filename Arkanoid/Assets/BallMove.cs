@@ -9,6 +9,10 @@ public class BallMove : MonoBehaviour{
     public bool gameStarted = false;
     public int countBricks = 16;
 
+    public int points = 0;
+
+    public GUISkin layout;              // Fonte do placar
+
     void GoBall(){
         float rand = Random.Range(0, 2);
         if(rand < 1){
@@ -18,6 +22,13 @@ public class BallMove : MonoBehaviour{
         }
     }
 
+    void OnGUI () {
+        GUI.skin = layout;
+        GUI.Label(new Rect(Screen.width - 150, 20, 100, 100), "Pontos: " + points);
+
+    }
+
+
     void OnCollisionEnter2D (Collision2D coll) {
         Scene scene = SceneManager.GetActiveScene();
         if(coll.collider.CompareTag("Player") || coll.collider.CompareTag("Wall") || coll.collider.CompareTag("Brick")){
@@ -26,6 +37,7 @@ public class BallMove : MonoBehaviour{
 
         if (coll.gameObject.tag == "Brick"){
             Destroy(coll.gameObject);  
+            points += 100;
             countBricks--;
 
             if (countBricks == 0){
