@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Wall
+  - spaceShip
+  - Heart
+  - Alien1
+  - Alien2
+  - Alien3
+  - NaveMae
   layers:
   - Default
   - TransparentFX
