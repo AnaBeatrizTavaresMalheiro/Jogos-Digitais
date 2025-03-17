@@ -18,10 +18,16 @@ public class Parallax : MonoBehaviour
 
     // Update is called once per frame
    void Update(){
-    transform.position += Vector3.left * Time.deltaTime * movingSpeed * parallaxEffect;
-    if(transform.position.x < -lenght ) {
-        transform.position = new Vector3(lenght, transform.position.y, transform.position.z);
+        transform.position += Vector3.left * Time.deltaTime * movingSpeed * parallaxEffect;
+        if(transform.position.x < -lenght ) {
+            transform.position = new Vector3(lenght, transform.position.y, transform.position.z);
+        }
+
+        if(GameManager.score >= 300){
+            parallaxEffect = 0.2f;
+        }
     }
-    }
+
+    
 
 }
