@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AquanoidGO_0: -274250481056828406
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
