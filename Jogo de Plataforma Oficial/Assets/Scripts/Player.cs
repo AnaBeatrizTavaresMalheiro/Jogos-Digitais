@@ -11,11 +11,18 @@ public class Player : MonoBehaviour
     public float boundLeft = -14.08f;            // Define os limites na esquerda
     private Rigidbody2D rb2d;               // Define o corpo rigido 2D que representa a raquete
 
+    private Animator animator;  
 
+    private int movendoHash = Animator.StringToHash("Movendo");
+
+    private int SubindoEscadaHash = Animator.StringToHash("SubindoEscada");
+
+    private SpriteRenderer spriteRenderer; // Se o personagem estiver para a direita, o sprite é o normal, se estiver para a esquerda, o sprite é o invertido
     
     void Start(){
         rb2d = GetComponent<Rigidbody2D>();     // Inicializa a raquete
-       
+        animator = GetComponent<Animator>(); // Inicializa o animator
+        spriteRenderer = GetComponent<SpriteRenderer>(); // Inicializa o sprite renderer
     }
 
     // Update is called once per frame
@@ -35,5 +42,14 @@ public class Player : MonoBehaviour
         }
         rb2d.velocity = vel;
     //   transform.position = pos;
+
+        animator.SetBool( movendoHash, vel.x != 0);
+        animator.SetBool( SubindoEscadaHash, vel.y != 0);
+
+        if(vel.x > 0){
+            spriteRenderer.flipX = false; // Se o personagem estiver se movendo para a direita, o sprite é o normal
+        } else if (vel.x < 0){
+            spriteRenderer.flipX = true; // Se o personagem estiver se movendo para a esquerda, o sprite é o invertido
+        }
     }
 }
