@@ -1,30 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-public class Parallax : MonoBehaviour {
-
+public class Parallax : MonoBehaviour
+{
     private float length;
+    private float startPos;
+    public GameObject cam;
     public float parallaxEffect;
-    private Tilemap tilemap;
 
-  
-
-    void Start(){
-        tilemap = GetComponent<Tilemap>();
-
-        // Calcula o comprimento baseado nos bounds do Tilemap
-        Bounds bounds = tilemap.localBounds;
-        length = bounds.size.x;
-
+    void Start()
+    {
+        startPos = transform.position.x;
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    void Update(){
-        transform.position += Vector3.left * Time.deltaTime * parallaxEffect;
-        if(transform.position.x < -length ) {
-            transform.position = new Vector3(length, transform.position.y, transform.position.z);
+    void Update()
+    {
+        float temp = cam.transform.position.x * (1 - parallaxEffect);
+        float dist = cam.transform.position.x * parallaxEffect;
+
+        transform.position = new Vector3(startPos + dist, transform.position.y, transform.position.z);
+
+        if (temp > startPos + length) 
+        {
+            startPos += length;
+        } 
+        else if (temp < startPos - length) 
+        {
+            startPos -= length;
         }
     }
-
 }

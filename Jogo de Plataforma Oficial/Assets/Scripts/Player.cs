@@ -18,6 +18,9 @@ public class Player : MonoBehaviour
     private int SubindoEscadaHash = Animator.StringToHash("SubindoEscada");
 
     private SpriteRenderer spriteRenderer; // Se o personagem estiver para a direita, o sprite é o normal, se estiver para a esquerda, o sprite é o invertido
+
+    public Tiro projectilPrefab;
+    public Transform firePoint;
     
     void Start(){
         rb2d = GetComponent<Rigidbody2D>();     // Inicializa a raquete
@@ -40,6 +43,12 @@ public class Player : MonoBehaviour
         else {
             vel.x = 0;                          // Velociade para manter parada
         }
+
+
+        if(Input.GetKeyDown(KeyCode.Space)){
+            Instantiate(projectilPrefab, firePoint.position, firePoint.rotation);
+        }
+
         rb2d.velocity = vel;
     //   transform.position = pos;
 
