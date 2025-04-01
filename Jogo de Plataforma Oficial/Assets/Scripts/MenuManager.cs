@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour{
     
     public GameObject howToPlayPanel;
+    public GameObject TextPular;
 
     public void Start(){
         howToPlayPanel.SetActive(false);
+        TextPular.SetActive(false);
     }
     public void Play(){
         SceneManager.LoadScene("SampleScene");
@@ -16,11 +18,13 @@ public class MenuManager : MonoBehaviour{
 
     public void OpenHowToPlay(){
         howToPlayPanel.SetActive(true);
+        TextPular.SetActive(true);
 
     }
 
     public void CloseHowToPlay(){
         howToPlayPanel.SetActive(false);
+        TextPular.SetActive(false);
     }
 
     public void QuitGame(){
