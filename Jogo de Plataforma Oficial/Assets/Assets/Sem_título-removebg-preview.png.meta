@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Sem_t\xEDtulo-removebg-preview_0": -2958286131908512331
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

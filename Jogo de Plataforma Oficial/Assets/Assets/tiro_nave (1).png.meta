@@ -178,7 +178,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tiro_nave (1)_0: -7295731540142367261
+      tiro_nave (1)_1: -4304427405209357235
+      tiro_nave (1)_2: 731583195063370441
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
